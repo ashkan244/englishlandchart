@@ -1,588 +1,0 @@
-<!DOCTYPE html>
-<html lang="fa" dir="rtl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>شرح وظایف و ساختار انگلیش‌لند</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background-color: #f8fafc;
-            background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        
-        /* Custom Scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #cbd5e1;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #94a3b8;
-        }
-
-        .card-hover {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .card-hover:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-        }
-
-        /* Accordion Logic */
-        .role-details {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s ease-out, opacity 0.5s ease-out;
-            opacity: 0;
-        }
-        .role-card.active .role-details {
-            max-height: 1200px; /* Increased for new content */
-            opacity: 1;
-            transition: max-height 0.6s ease-in, opacity 0.4s ease-in;
-        }
-        .role-card.active .chevron-icon {
-            transform: rotate(180deg);
-        }
-        
-        .badge {
-            font-size: 0.7rem;
-            padding: 2px 8px;
-            border-radius: 6px;
-            font-weight: 500;
-        }
-        
-        /* Specific Role Colors */
-        .border-l-manager { border-left: 4px solid #4f46e5; } /* Indigo */
-        .border-l-edu { border-left: 4px solid #dc2626; } /* Red */
-        .border-l-mkt { border-left: 4px solid #db2777; } /* Pink */
-        .border-l-fin { border-left: 4px solid #059669; } /* Emerald */
-    </style>
-</head>
-<body class="text-slate-700 pb-20 selection:bg-yellow-200 selection:text-slate-800">
-
-    <!-- Header -->
-    <header class="bg-white/80 backdrop-blur-md shadow-sm border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-                <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-2xl flex items-center justify-center shadow-lg shadow-orange-200 transform rotate-3 hover:rotate-0 transition-all">
-                    <i class="fas fa-layer-group text-white text-xl"></i>
-                </div>
-                <div>
-                    <h1 class="text-xl font-bold text-slate-800 leading-tight tracking-tight">ساختار سازمانی <span class="text-yellow-600">English</span>Land</h1>
-                    <p class="text-xs text-slate-500 font-medium">سند جامع عملیاتی (SOP) و شرح وظایف تفصیلی</p>
-                </div>
-            </div>
-            <div class="hidden md:flex items-center gap-2">
-                <div class="text-right">
-                    <div class="text-xs font-bold text-slate-700">نسخه نهایی</div>
-                    <div class="text-[10px] text-slate-400">توسعه یافته</div>
-                </div>
-                <div class="w-8 h-8 rounded-full bg-slate-100 flex items-center justify-center text-slate-400 border border-slate-200">
-                    <i class="fas fa-check"></i>
-                </div>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
-        <div class="text-center mb-10 max-w-2xl mx-auto">
-            <h2 class="text-2xl font-black text-slate-800 mb-2">شرح وظایف و مسئولیت‌ها</h2>
-            <p class="text-sm text-slate-500 leading-relaxed">برای مشاهده شرح دقیق اهداف، وظایف روزانه و مسئولیت‌های کلیدی، روی کارت هر جایگاه شغلی کلیک کنید.</p>
-        </div>
-
-        <!-- Grid Layout -->
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-start">
-
-            <!-- COLUMN 1: INTERNAL OPS -->
-            <div class="space-y-5">
-                <div class="flex items-center gap-3 pb-2 border-b border-slate-200">
-                    <span class="w-2 h-8 bg-indigo-600 rounded-full shadow-sm"></span>
-                    <div>
-                        <h2 class="text-lg font-bold text-slate-800">مدیریت داخلی & اداری</h2>
-                        <p class="text-[10px] text-slate-400">Internal Operations</p>
-                    </div>
-                </div>
-
-                <!-- Manager Card (Ghazal) -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden card-hover role-card cursor-pointer border-l-manager relative group" onclick="toggleCard(this)">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-                    <div class="p-5 flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-xl shadow-inner">
-                                <i class="fas fa-user-shield"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-800 text-lg">میس غزال</h3>
-                                <div class="text-xs text-indigo-600 font-bold bg-indigo-50 px-2 py-1 rounded inline-block mt-1">مدیر داخلی و منابع انسانی</div>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down text-slate-300 transition-transform duration-300 chevron-icon"></i>
-                    </div>
-                    <div class="role-details bg-slate-50 border-t border-slate-100">
-                        <div class="p-5 text-sm space-y-4">
-                            <!-- GOAL -->
-                            <div class="bg-indigo-100/50 p-3 rounded-xl border border-indigo-100">
-                                <h4 class="font-bold text-indigo-700 text-xs mb-1">🎯 هدف اصلی نقش</h4>
-                                <p class="text-xs text-slate-600 leading-relaxed text-justify">تضمین یکپارچگی عملیات، انضباط سازمانی، مدیریت بحران و ایجاد هماهنگی کامل بین واحدهای آموزش، پذیرش و مالی.</p>
-                            </div>
-                            
-                            <!-- RESPONSIBILITIES -->
-                            <div>
-                                <h4 class="font-bold text-slate-700 mb-2 flex items-center gap-2 text-xs uppercase tracking-wider"><i class="fas fa-list-ul text-indigo-500"></i> وظایف کلیدی</h4>
-                                <ul class="space-y-3">
-                                    <li class="text-slate-600 text-xs bg-white p-2 rounded shadow-sm">
-                                        <strong class="text-indigo-600 block mb-1">۱. مدیریت منابع انسانی (HR):</strong>
-                                        تنظیم دقیق شیفت‌ها، تایید مرخصی‌ها، نظارت بر انضباط و پوشش پرسنل، و حل تضادهای داخلی.
-                                    </li>
-                                    <li class="text-slate-600 text-xs bg-white p-2 rounded shadow-sm">
-                                        <strong class="text-indigo-600 block mb-1">۲. مدیریت عالی عملیات:</strong>
-                                        نظارت بر عملکرد سرپرست پذیرش (رها) و مدیران میانی، و اطمینان از اجرای صحیح پروتکل‌ها.
-                                    </li>
-                                    <li class="text-slate-600 text-xs bg-white p-2 rounded shadow-sm">
-                                        <strong class="text-indigo-600 block mb-1">۳. مدیریت بحران و شکایات:</strong>
-                                        ورود مستقیم به شکایات پیچیده والدین یا مسائل حاد اجرایی که از سطح پذیرش فراتر رفته‌اند.
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Supervisor Card (Raha) -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden card-hover role-card cursor-pointer" onclick="toggleCard(this)">
-                    <div class="p-4 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center">
-                                <i class="fas fa-tasks"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-800">میس رها</h3>
-                                <div class="text-xs text-slate-500">سرپرست پذیرش و QC</div>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down text-slate-300 transition-transform duration-300 chevron-icon"></i>
-                    </div>
-                    <div class="role-details bg-slate-50 border-t border-slate-100">
-                        <div class="p-4 text-sm space-y-4">
-                            <ul class="space-y-2 list-none">
-                                <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">
-                                    <strong class="block text-slate-800 mb-1"><i class="fas fa-check-circle text-green-500 text-[10px]"></i> نظارت اجرایی:</strong> 
-                                    چک کردن لحظه‌ای کارهای میس زهرا و شیرین، و اطمینان از آماده بودن کلاس‌ها قبل از شروع.
-                                </li>
-                                <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">
-                                    <strong class="block text-slate-800 mb-1"><i class="fas fa-check-circle text-green-500 text-[10px]"></i> کنترل کیفیت (QC):</strong> 
-                                    بازبینی نهایی کارنامه‌ها، صحت‌سنجی پیام‌های ارسالی به والدین و چک کردن لیست‌های حضور و غیاب.
-                                </li>
-                                <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">
-                                    <strong class="block text-slate-800 mb-1"><i class="fas fa-check-circle text-green-500 text-[10px]"></i> ایمنی و تردد:</strong> 
-                                    مدیریت فرآیند "تحویل امن زبان‌آموزان" (Safe Dismissal) و نظارت بر ورود و خروج‌ها.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Admin Card (Zahra) -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden card-hover role-card cursor-pointer" onclick="toggleCard(this)">
-                    <div class="p-4 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center">
-                                <i class="fas fa-box-open"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-800">میس زهرا</h3>
-                                <div class="text-xs text-slate-500">مسئول اداری و تدارکات</div>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down text-slate-300 transition-transform duration-300 chevron-icon"></i>
-                    </div>
-                    <div class="role-details bg-slate-50 border-t border-slate-100">
-                        <div class="p-4 text-sm space-y-4">
-                            <ul class="space-y-2 list-none">
-                                <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">
-                                    <strong class="text-slate-800">۱. مدیریت بایگانی:</strong> تشکیل پرونده فیزیکی و دیجیتالی، رفع کسری مدارک.
-                                </li>
-                                <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">
-                                    <strong class="text-slate-800">۲. تدارکات و خرید:</strong> پایش موجودی اقلام مصرفی و انجام خریدهای تایید شده.
-                                </li>
-                                <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">
-                                    <strong class="text-slate-800">۳. نظارت محیطی:</strong> نظارت بر کار نیروی خدماتی و نظافت.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- COLUMN 2: MARKETING & FINANCE -->
-            <div class="space-y-5">
-                
-                <!-- FINANCE SECTION -->
-                <div class="flex items-center gap-3 pb-2 border-b border-slate-200">
-                    <span class="w-2 h-8 bg-emerald-600 rounded-full shadow-sm"></span>
-                    <div>
-                        <h2 class="text-lg font-bold text-slate-800">دپارتمان مالی</h2>
-                        <p class="text-[10px] text-slate-400">Finance Department</p>
-                    </div>
-                </div>
-
-                <!-- Finance Manager (Iman) - PROMOTED -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden card-hover role-card cursor-pointer border-l-fin" onclick="toggleCard(this)">
-                    <div class="p-5 flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center text-xl shadow-inner">
-                                <i class="fas fa-calculator"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-800 text-lg">آقای ایمان</h3>
-                                <div class="text-xs text-emerald-600 font-bold bg-emerald-50 px-2 py-1 rounded inline-block mt-1">مدیر دپارتمان مالی</div>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down text-slate-300 transition-transform duration-300 chevron-icon"></i>
-                    </div>
-                    <div class="role-details bg-slate-50 border-t border-slate-100">
-                        <div class="p-5 text-sm space-y-4">
-                            <!-- GOAL -->
-                            <div class="bg-emerald-100/50 p-3 rounded-xl border border-emerald-100">
-                                <h4 class="font-bold text-emerald-700 text-xs mb-1">🎯 هدف اصلی نقش</h4>
-                                <p class="text-xs text-slate-600">مدیریت کلان جریان نقدینگی، شفافیت مالی و محاسبه دقیق حقوق و دستمزد.</p>
-                            </div>
-
-                            <ul class="space-y-2">
-                                <li class="flex gap-2 text-slate-600 bg-white p-2 rounded shadow-sm"><i class="fas fa-check text-emerald-500 mt-1 text-[10px]"></i> <span><strong>حسابداری کلان:</strong> ثبت اسناد، کنترل مغایرت بانکی و مدیریت هزینه‌ها.</span></li>
-                                <li class="flex gap-2 text-slate-600 bg-white p-2 rounded shadow-sm"><i class="fas fa-check text-emerald-500 mt-1 text-[10px]"></i> <span><strong>حقوق و دستمزد:</strong> محاسبه ساعات کاری معلمین و پرسنل و پرداخت‌ها.</span></li>
-                                <li class="flex gap-2 text-slate-600 bg-white p-2 rounded shadow-sm"><i class="fas fa-check text-emerald-500 mt-1 text-[10px]"></i> <span><strong>گزارش‌دهی:</strong> ارائه گزارش سود و زیان ماهانه به مدیریت.</span></li>
-                            </ul>
-
-                             <!-- NEW: Strategic Responsibilities -->
-                             <div class="mt-4 pt-3 border-t border-dashed border-emerald-300 bg-emerald-50/50 p-3 rounded-lg">
-                                <h4 class="font-bold text-emerald-700 text-xs mb-2 flex items-center gap-1">
-                                    <i class="fas fa-lightbulb"></i> مسئولیت‌های استراتژیک (مشاوره و توسعه)
-                                </h4>
-                                <ul class="space-y-2 list-disc list-inside text-xs text-slate-600 marker:text-emerald-400">
-                                    <li>مشاوره در برنامه‌ریزی مالی و قیمت‌گذاری کورس‌های جدید.</li>
-                                    <li>مشارکت در سیستم‌سازی فرآیندهای مالی و اداری.</li>
-                                    <li>ایده‌پردازی برای کاهش هزینه‌ها و تعریف پروژه‌های سودآور جدید.</li>
-                                    <li>ارائه پیشنهادات توسعه‌ای به مدیریت ارشد.</li>
-                                </ul>
-                            </div>
-                            
-                            <!-- Sub-role: Collection & Procurement -->
-                            <div class="mt-4 pt-3 border-t border-slate-200">
-                                <div class="flex items-center gap-2 mb-2">
-                                    <div class="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center text-[10px] text-slate-500"><i class="fas fa-users"></i></div>
-                                    <span class="text-xs font-bold text-slate-600">همکاران زیرمجموعه:</span>
-                                </div>
-                                <div class="space-y-2">
-                                    <div class="bg-white border border-slate-200 rounded p-2 flex justify-between items-center">
-                                        <div class="flex items-center gap-2">
-                                            <i class="fas fa-file-invoice-dollar text-slate-400 text-[10px]"></i>
-                                            <span class="text-xs font-bold text-slate-700">میس شیرین</span>
-                                        </div>
-                                        <span class="text-[10px] text-slate-500">مسئول وصول مطالبات</span>
-                                    </div>
-                                    <div class="bg-white border border-slate-200 rounded p-2 flex justify-between items-center">
-                                        <div class="flex items-center gap-2">
-                                            <i class="fas fa-shopping-cart text-slate-400 text-[10px]"></i>
-                                            <span class="text-xs font-bold text-slate-700">میس زهرا</span>
-                                        </div>
-                                        <span class="text-[10px] text-slate-500">مسئول تدارکات</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- MARKETING SECTION -->
-                <div class="flex items-center gap-3 pb-2 border-b border-slate-200 pt-4">
-                    <span class="w-2 h-8 bg-pink-600 rounded-full shadow-sm"></span>
-                    <div>
-                        <h2 class="text-lg font-bold text-slate-800">مارکتینگ و فروش</h2>
-                        <p class="text-[10px] text-slate-400">Marketing & Sales</p>
-                    </div>
-                </div>
-
-                <!-- Marketing Manager -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden card-hover role-card cursor-pointer border-l-mkt" onclick="toggleCard(this)">
-                    <div class="p-5 flex items-center justify-between">
-                        <div class="flex items-center gap-4">
-                            <div class="w-14 h-14 rounded-2xl bg-pink-50 text-pink-600 flex items-center justify-center text-xl shadow-inner">
-                                <i class="fas fa-bullhorn"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-800 text-lg">آقای اشکان</h3>
-                                <div class="text-xs text-pink-600 font-bold bg-pink-50 px-2 py-1 rounded inline-block mt-1">مدیر مارکتینگ</div>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down text-slate-300 transition-transform duration-300 chevron-icon"></i>
-                    </div>
-                    <div class="role-details bg-slate-50 border-t border-slate-100">
-                        <div class="p-5 text-sm space-y-4">
-                            <ul class="space-y-2">
-                                <li class="flex gap-2 text-slate-600 bg-white p-2 rounded shadow-sm"><i class="fas fa-check text-pink-400 mt-1 text-[10px]"></i> <span><strong>استراتژی:</strong> بودجه‌بندی و طراحی کمپین‌های تبلیغاتی.</span></li>
-                                <li class="flex gap-2 text-slate-600 bg-white p-2 rounded shadow-sm"><i class="fas fa-check text-pink-400 mt-1 text-[10px]"></i> <span><strong>مدیریت برند:</strong> نظارت بر هویت بصری و محتوا.</span></li>
-                            </ul>
-
-                             <!-- NEW: Strategic Responsibilities -->
-                             <div class="mt-4 pt-3 border-t border-dashed border-pink-300 bg-pink-50/50 p-3 rounded-lg">
-                                <h4 class="font-bold text-pink-700 text-xs mb-2 flex items-center gap-1">
-                                    <i class="fas fa-lightbulb"></i> مسئولیت‌های استراتژیک (مشاوره و توسعه)
-                                </h4>
-                                <ul class="space-y-2 list-disc list-inside text-xs text-slate-600 marker:text-pink-400">
-                                    <li>مشاوره در طراحی و ایده‌پردازی کورس‌های جدید و جذاب.</li>
-                                    <li>سیستم‌سازی فرآیندهای جذب و فروش (Funnel).</li>
-                                    <li>ایده‌پردازی برای راه‌اندازی بخش‌های نوآورانه در آموزشگاه.</li>
-                                    <li>ارائه طرح‌های پیشنهادی خلاقانه به مدیریت برای رشد برند.</li>
-                                </ul>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sales Expert -->
-                <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden card-hover role-card cursor-pointer" onclick="toggleCard(this)">
-                    <div class="p-4 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-10 h-10 rounded-xl bg-slate-100 text-slate-500 flex items-center justify-center">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <div>
-                                <h3 class="font-bold text-slate-800">میس ساقی / شیرین</h3>
-                                <div class="text-xs text-slate-500">کارشناس فروش</div>
-                            </div>
-                        </div>
-                        <i class="fas fa-chevron-down text-slate-300 transition-transform duration-300 chevron-icon"></i>
-                    </div>
-                    <div class="role-details bg-slate-50 border-t border-slate-100">
-                        <div class="p-4 text-sm space-y-3">
-                            <ul class="space-y-2 list-none">
-                                <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">
-                                    <strong class="text-pink-600">۱. مشاوره اقناعی:</strong> برگزاری جلسات پرزنت حضوری.
-                                </li>
-                                <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">
-                                    <strong class="text-pink-600">۲. پیگیری (Follow-up):</strong> تماس مجدد با مشتریان احتمالی.
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Event & Social Box -->
-                <div class="grid grid-cols-2 gap-3">
-                    <!-- EVENT -->
-                    <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm text-center card-hover cursor-pointer role-card" onclick="toggleCard(this)">
-                         <div class="w-8 h-8 mx-auto rounded-full bg-orange-100 text-orange-500 flex items-center justify-center mb-2"><i class="fas fa-glass-cheers"></i></div>
-                        <h4 class="text-xs font-bold text-slate-700">میس پرنیان</h4>
-                        <div class="text-[10px] text-slate-400 mb-2">مدیر ایونت</div>
-                        <i class="fas fa-chevron-down text-slate-300 text-[10px]"></i>
-                        
-                        <div class="role-details text-right mt-2 bg-orange-50 p-2 rounded text-[10px] leading-relaxed border border-orange-100">
-                            <strong>وظایف:</strong> ایده‌پردازی تم ایونت‌ها، هماهنگی اجرا و مدیریت روز برگزاری.
-                        </div>
-                    </div>
-                    
-                    <!-- SOCIAL -->
-                    <div class="bg-white rounded-xl p-3 border border-slate-200 shadow-sm text-center card-hover cursor-pointer role-card" onclick="toggleCard(this)">
-                        <div class="w-8 h-8 mx-auto rounded-full bg-purple-100 text-purple-500 flex items-center justify-center mb-2"><i class="fab fa-instagram"></i></div>
-                        <h4 class="text-xs font-bold text-slate-700">شیرین J / آتوسا</h4>
-                        <div class="text-[10px] text-slate-400 mb-2">سوشال مدیا</div>
-                        <i class="fas fa-chevron-down text-slate-300 text-[10px]"></i>
-
-                        <div class="role-details text-right mt-2 bg-purple-50 p-2 rounded text-[10px] leading-relaxed border border-purple-100">
-                            <strong>وظایف:</strong> استوری‌گذاری روزانه، پوشش تصویری کلاس‌ها، پاسخ به دایرکت.
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- COLUMN 3: EDUCATION -->
-            <div class="space-y-5">
-                <div class="flex items-center gap-3 pb-2 border-b border-slate-200">
-                    <span class="w-2 h-8 bg-red-600 rounded-full shadow-sm"></span>
-                    <div>
-                        <h2 class="text-lg font-bold text-slate-800">دپارتمان آموزش</h2>
-                        <p class="text-[10px] text-slate-400">Academic & Education</p>
-                    </div>
-                </div>
-
-                <!-- In-Person Supervisors Section -->
-                <div class="mb-4">
-                    <div class="flex items-center gap-2 mb-2 px-1">
-                        <i class="fas fa-building text-red-500 text-xs"></i>
-                        <h3 class="text-sm font-bold text-slate-700">شعبه حضوری (Supervisors)</h3>
-                    </div>
-
-                    <!-- Afsaneh -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden card-hover role-card cursor-pointer mb-2 border-l-edu" onclick="toggleCard(this)">
-                        <div class="p-4 flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shadow-inner">
-                                    <i class="fas fa-user-check"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-slate-800">میس افسانه</h3>
-                                    <div class="text-xs text-red-600 font-bold bg-red-50 px-2 py-0.5 rounded inline-block">سوپروایزر حضوری</div>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down text-slate-300 transition-transform duration-300 chevron-icon"></i>
-                        </div>
-                        <div class="role-details bg-slate-50 border-t border-slate-100">
-                            <div class="p-4 text-sm space-y-3">
-                                <ul class="space-y-2 list-none">
-                                    <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">✅ <strong>ارتباط با اولیا:</strong> برگزاری جلسات PTM و حل تعارضات.</li>
-                                    <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">✅ <strong>مدیریت کلاس:</strong> برنامه‌ریزی کلاسی و جایگزینی معلمین.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Elaheh -->
-                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden card-hover role-card cursor-pointer border-l-edu" onclick="toggleCard(this)">
-                        <div class="p-4 flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-red-50 text-red-600 flex items-center justify-center shadow-inner">
-                                    <i class="fas fa-clipboard-check"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-slate-800">میس الهه</h3>
-                                    <div class="text-xs text-red-600 font-bold bg-red-50 px-2 py-0.5 rounded inline-block">سوپروایزر حضوری</div>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down text-slate-300 transition-transform duration-300 chevron-icon"></i>
-                        </div>
-                        <div class="role-details bg-slate-50 border-t border-slate-100">
-                            <div class="p-4 text-sm space-y-3">
-                                <ul class="space-y-2 list-none">
-                                    <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">🔍 <strong>تضمین کیفیت:</strong> آبزرو کلاس‌ها و کنترل طرح درس.</li>
-                                    <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">📝 <strong>محتوا:</strong> تولید ورک‌شیت و فلش‌کارت.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Online Supervisors Section -->
-                <div class="mb-4 pt-2 border-t border-slate-200 border-dashed">
-                    <div class="flex items-center gap-2 mb-2 px-1 mt-2">
-                        <i class="fas fa-wifi text-cyan-500 text-xs"></i>
-                        <h3 class="text-sm font-bold text-slate-700">شعبه آنلاین (Supervisors)</h3>
-                    </div>
-                    
-                    <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden card-hover role-card cursor-pointer border-l-edu" onclick="toggleCard(this)">
-                        <div class="p-4 flex items-center justify-between">
-                            <div class="flex items-center gap-3">
-                                <div class="w-10 h-10 rounded-xl bg-cyan-50 text-cyan-600 flex items-center justify-center shadow-inner">
-                                    <i class="fas fa-laptop-code"></i>
-                                </div>
-                                <div>
-                                    <h3 class="font-bold text-slate-800">میس غزل & مرجان</h3>
-                                    <div class="text-xs text-cyan-600 font-bold bg-cyan-50 px-2 py-0.5 rounded inline-block">سوپروایزرهای آنلاین</div>
-                                </div>
-                            </div>
-                            <i class="fas fa-chevron-down text-slate-300 transition-transform duration-300 chevron-icon"></i>
-                        </div>
-                        <div class="role-details bg-slate-50 border-t border-slate-100">
-                            <div class="p-4 text-sm space-y-3">
-                                <ul class="space-y-2 list-none">
-                                    <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">💻 <strong>فنی:</strong> مدیریت پلتفرم و رفع اشکالات اتصال.</li>
-                                    <li class="text-xs text-slate-600 bg-white p-2 rounded border border-slate-100">📚 <strong>آموزشی:</strong> پیگیری تکالیف و کیفیت کلاس‌های آنلاین.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Teachers -->
-                <div class="bg-white rounded-xl p-4 border border-slate-200 shadow-sm mt-4">
-                    <div class="flex items-center justify-between mb-2 border-b border-slate-100 pb-2">
-                        <h4 class="text-xs font-bold text-slate-500">مدرسین (Teachers)</h4>
-                        <i class="fas fa-users text-slate-300 text-xs"></i>
-                    </div>
-                    <div class="flex flex-wrap gap-1.5">
-                        <span class="badge bg-slate-100 text-slate-600 border border-slate-200">میس غزل</span>
-                        <span class="badge bg-slate-100 text-slate-600 border border-slate-200">میس هاله</span>
-                        <span class="badge bg-slate-100 text-slate-600 border border-slate-200">میس صنا</span>
-                        <span class="badge bg-slate-100 text-slate-600 border border-slate-200">میس آیدا</span>
-                        <span class="badge bg-slate-100 text-slate-600 border border-slate-200">میس پرنیان</span>
-                        <span class="badge bg-slate-100 text-slate-600 border border-slate-200">میس ترانه</span>
-                        <span class="badge bg-slate-100 text-slate-600 border border-slate-200">میس رضوان</span>
-                        <span class="text-[10px] text-slate-400 pt-1 px-1">...</span>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <!-- FUTURE ROADMAP -->
-        <div class="mt-12">
-            <div class="flex items-center gap-2 mb-6 justify-center">
-                <i class="fas fa-map-marked-alt text-yellow-500 text-xl"></i>
-                <h2 class="text-xl font-bold text-slate-700">نقش‌های پیش‌بینی شده (Future Roadmap)</h2>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <!-- Role 1 -->
-                <div class="bg-gradient-to-br from-white to-slate-50 p-6 rounded-2xl shadow-sm border border-slate-200 relative group overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-pink-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">مارکتینگ</div>
-                    <div class="w-10 h-10 rounded-full bg-pink-100 text-pink-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-heart"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">کارشناس CRM</h3>
-                    <p class="text-xs text-slate-500 leading-relaxed">تحلیل رفتار مشتریان، اجرای کمپین‌های وفاداری و باشگاه مشتریان.</p>
-                </div>
-                <!-- Role 2 -->
-                <div class="bg-gradient-to-br from-white to-slate-50 p-6 rounded-2xl shadow-sm border border-slate-200 relative group overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-indigo-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">اداری</div>
-                    <div class="w-10 h-10 rounded-full bg-indigo-100 text-indigo-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-users-cog"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">مسئول منابع انسانی (HR)</h3>
-                    <p class="text-xs text-slate-500 leading-relaxed">مدیریت مستقل قراردادها، بیمه و امور رفاهی کارکنان.</p>
-                </div>
-                <!-- Role 3 -->
-                <div class="bg-gradient-to-br from-white to-slate-50 p-6 rounded-2xl shadow-sm border border-slate-200 relative group overflow-hidden">
-                    <div class="absolute top-0 right-0 bg-red-500 text-white text-[10px] font-bold px-3 py-1 rounded-bl-lg">آموزش</div>
-                    <div class="w-10 h-10 rounded-full bg-red-100 text-red-500 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"><i class="fas fa-gamepad"></i></div>
-                    <h3 class="font-bold text-slate-800 mb-2">تولیدکننده محتوا</h3>
-                    <p class="text-xs text-slate-500 leading-relaxed">ساخت انیمیشن، پادکست و بازی‌های آموزشی دیجیتال.</p>
-                </div>
-            </div>
-        </div>
-
-    </main>
-
-    <!-- Footer -->
-    <footer class="border-t border-slate-200 bg-white mt-12">
-        <div class="max-w-7xl mx-auto px-6 py-8 text-center">
-            <p class="text-slate-400 text-xs font-light">© ۲۰۲۴ کلیه حقوق متعلق به مجموعه آموزشی انگلیش‌لند می‌باشد.</p>
-            <p class="text-slate-300 text-[10px] mt-1">طراحی شده برای استفاده داخلی (Internal Use Only)</p>
-        </div>
-    </footer>
-
-    <script>
-        function toggleCard(element) {
-            // Find details inside
-            const details = element.querySelector('.role-details');
-            
-            // Toggle active class
-            if (element.classList.contains('active')) {
-                element.classList.remove('active');
-            } else {
-                // Optional: Close others
-                // document.querySelectorAll('.role-card').forEach(card => card.classList.remove('active'));
-                element.classList.add('active');
-            }
-        }
-    </script>
-</body>
-</html>
